@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-FnujoHKLiA0lyWE/5kNhcd8lfMILbUAZFAT89u11OhZI7Gt135tk3bGYVBC2xmJ5" crossorigin="anonymous">
+    <title>Poo Practice</title>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar bg-light">
+        <a class="navbar-brand" href="/">Product App</a>
+    </nav>
+
+    <div class="container">
+        <!-- APPLICATION -->
+        <div id="app" class="row pt-5">
+            <div id="=app" class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <H4>Add a product</H4>
+                        </div>
+                        <form id="product-form" class="card-body">
+                            <div class="form-group">
+                                <input 
+                                type="text"
+                                name="name" 
+                                id="name" 
+                                class="form-control" 
+                                placeholder="Product Name">
+                            </div>
+                            <div class="form-group">
+                                <input 
+                                type="number" 
+                                name="price" id="price" 
+                                class="form-control"
+                                step="0.1" 
+                                placeholder="Product Price">
+                            </div>
+                            <div class="form-group">
+                                <input 
+                                type="number" 
+                                name="year" 
+                                id="year" 
+                                class="form-control"
+                                value="2018"
+                                min="2000"
+                                max="2020" 
+                                placeholder="Year of the Product">
+                            </div>
+                            <input type="submit" value="Save" class="btn btn-primary btn-block">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8" id="product-list"></div>      
+            </div>               
+        </div>
+
+    <script src="App.js "></script>
+</body>
+</html> 
