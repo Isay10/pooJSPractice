@@ -31,12 +31,24 @@ class UI{
         document.getElementsByName('delete');
             if (element.name === 'delete'){
                 element.parentElement.parentElement.parentElement.remove()
+                this.showMessage('Product succesfully deleted', 'danger');
+                setTimeout(function(){
+                    document.querySelector(`.alert`).remove();
+                }, 3000);
             }
     }
 
     showMessage(message, cssClass){
-       const div =  document.createElement('div')
-       div.className
+       const div =  document.createElement('div');
+       div.className = `alert alert-${cssClass} mt-4`;
+        div.appendChild(document.createTextNode(message));
+        //MOSTRANDO EN EL DOM
+        const container = document.querySelector('.container');
+        const app = document.querySelector('#app');
+        container.insertBefore(div, app);
+        setTimeout(function(){
+            document.querySelector(`.alert`).remove();
+        }, 3000);
     }
 }
 
@@ -49,12 +61,16 @@ document.getElementById('product-form')
     const price = document.getElementById('price').value;
     const year = document.getElementById('year').value;
     
-/*     console.log(name, price, year);
- */
+/*     console.log(name, price, year);*/
     const product = new Product(name, price, year);
     const ui = new UI();
+    if (product === "" || price === "" || year === ""){
+        return ui.showMessage('Please complete all the fields', "danger");
+        }
+    
     ui.addProduct(product);
     ui.resetForm();
+    ui.showMessage( "Product added successfully", "success");
     e.preventDefault();
     })  
 
